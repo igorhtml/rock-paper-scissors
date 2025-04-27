@@ -25,10 +25,14 @@ function getUserChoice() {
 function playGame() {
 
     let userScore = 0, computerScore = 0;
+    let round = 1;
 
     function playRound() {
+        console.log(`ROUND ${round}!`)
         let computerChoice = getComputerChoice();
         let userChoice = getUserChoice();
+        console.log(`User weapon: ${userChoice} | Computer weapon: ${computerChoice}`);
+
 
         if (userChoice == "rock") {
             if (computerChoice == "scissors") {
@@ -71,6 +75,9 @@ function playGame() {
                 console.log("Computer picked paper. Its a draw!");
             }
         }
+
+        console.log(`User Score: ${userScore} | Computer Score: ${computerScore}`);
+        round +=1;
     }
 
     while(userScore != 3 & computerScore != 3) {
